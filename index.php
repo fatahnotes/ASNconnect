@@ -56,15 +56,14 @@
             display: block;
         }
         
-        /* Dashboard Section */
+        /* ======================= REVISI HEADER DASHBOARD ======================= */
         .dashboard-section {
             position: relative;
-            height: 260px;
+            height: 300px;
             background: linear-gradient(to right, var(--primary), var(--secondary));
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            padding: 16px;
+            padding: 12px;
             color: white;
             overflow: hidden;
             border-radius: 0 0 30px 30px;
@@ -76,7 +75,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 8px 0;
+            padding-bottom: 8px;
         }
         
         .brand {
@@ -86,10 +85,10 @@
         }
         
         .brand-logo {
-            width: 32px;
-            height: 32px;
+            width: 36px;
+            height: 36px;
             background: rgba(255,255,255,0.3);
-            border-radius: 50%;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -98,6 +97,13 @@
             font-size: 14px;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255,255,255,0.4);
+            overflow: hidden;
+        }
+        
+        .brand-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .brand-text {
@@ -111,8 +117,8 @@
         .header-icon {
             font-size: 16px;
             background: rgba(255,255,255,0.3);
-            width: 32px;
-            height: 32px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -132,63 +138,143 @@
         .dashboard-content {
             position: relative;
             z-index: 2;
-            text-align: center;
             flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-bottom: 5px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto auto auto;
+            gap: 6px;
+            padding: 0 20px;
+        }
+        
+        .user-info {
+            grid-column: 1 / span 4;
+            text-align: center;
+            margin-bottom: 4px;
         }
         
         .user-greeting {
-            font-size: 20px;
+            font-size: 16px;
             font-weight: 600;
-            margin-bottom: 8px;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            margin-bottom: 2px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
             color: white;
         }
         
         .user-position {
-            font-size: 14px;
+            font-size: 12px;
             opacity: 0.9;
-            margin-bottom: 15px;
             color: rgba(255,255,255,0.9);
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.3);
         }
         
         /* Stat Cards */
-        .stat-cards {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 15px;
-            padding: 0 16px;
-        }
-        
         .stat-card {
-            flex: 1;
             background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 12px;
+            backdrop-filter: blur(8px);
+            border-radius: 6px;
+            padding: 3px 1px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
         .stat-value {
-            font-weight: 700;
-            font-size: 18px;
+            font-weight: 600;
+            font-size: 10px;
             color: white;
-            margin-bottom: 4px;
+            margin-bottom: 1px;
         }
         
         .stat-label {
-            font-size: 11px;
+            font-size: 9px;
             color: rgba(255,255,255,0.9);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.1px;
         }
+        
+        /* Mini Cards */
+        .mini-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            border-radius: 6px;
+            padding: 3px 2px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+        
+        .mini-value {
+            font-weight: 500;
+            font-size: 11px;
+            color: white;
+            margin-bottom: 1px;
+        }
+        
+        .mini-label {
+            font-size: 9px;
+            color: rgba(255,255,255,0.85);
+        }
+        
+        .mini-icon {
+            font-size: 10px;
+            margin-bottom: 2px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        /* Ninebox Section */
+        .ninebox-section {
+            grid-column: 1 / span 4;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(8px);
+            border-radius: 10px;
+            padding: 5px;
+            margin-top: 2px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .ninebox-title {
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 2px;
+            text-align: left;
+        }
+        
+        .ninebox-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .ninebox-badge {
+            background: rgba(255,255,255,0.3);
+            border-radius: 20px;
+            padding: 4px 8px;
+            font-size: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .ninebox-badge i {
+            font-size: 12px;
+        }
+        
+        .development-text {
+            font-size: 10px;
+            line-height: 1.3;
+            text-align: center;
+            flex-grow: 1;
+            padding: 0 6px;
+        }
+        
+        /* ======================= END OF HEADER REVISI ======================= */
         
         /* SKP Section */
         .skp-section {
@@ -294,7 +380,7 @@
         
         .menu-item {
             text-align: center;
-            padding: 12px 0;
+            padding: 8px 0;
             background: white;
             border-radius: 12px;
             box-shadow: 0 3px 8px rgba(0,0,0,0.05);
@@ -308,8 +394,8 @@
         }
         
         .menu-icon {
-            width: 40px;
-            height: 40px;
+            width: 37px;
+            height: 36px;
             background: linear-gradient(135deg, var(--primary), var(--primary-light));
             border-radius: 50%;
             display: flex;
@@ -761,228 +847,430 @@
     transition: all 0.3s;
 }
 
+/* New styles for enhanced attendance section */
+.attendance-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
 
+.face-recognition {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: #f8f9fa;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 2px dashed #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 
-        
-        .absensi-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(40, 167, 69, 0.4);
-        }
-        
-        .absensi-status {
-            font-size: 14px;
-            color: var(--accent);
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
-        
-        .absensi-location {
-            font-size: 13px;
-            color: var(--text-light);
-        }
-        
-        /* Notification Section */
-        .notification-section {
-            padding: 20px;
-        }
-        
-        .notification-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .notification-title {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--primary);
-        }
-        
-        .notification-filter {
-            background: #e9ecef;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            color: var(--text);
-        }
-        
-        .notification-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .notification-item {
-            background: white;
-            border-radius: 16px;
-            padding: 16px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            position: relative;
-            transition: all 0.3s;
-        }
-        
-        .notification-item.unread {
-            border-left: 3px solid var(--primary);
-        }
-        
-        .notification-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-        }
-        
-        .notification-title {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--dark);
-            margin-bottom: 8px;
-        }
-        
-        .notification-content {
-            font-size: 13px;
-            color: var(--text-light);
-            margin-bottom: 12px;
-            line-height: 1.5;
-        }
-        
-        .notification-footer {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: var(--text-light);
-        }
-        
-        .notification-badge {
-            position: absolute;
-            top: 16px;
-            right: 16px;
-            width: 10px;
-            height: 10px;
-            background: var(--primary);
-            border-radius: 50%;
-        }
-        
-        /* Footer Navigation */
-        .footer-nav {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: white;
-            display: flex;
-            box-shadow: 0 -3px 12px rgba(0,0,0,0.08);
-            height: 70px;
-            z-index: 100;
-            max-width: 480px;
-            margin: 0 auto;
-            border-radius: 20px 20px 0 0;
-            overflow: hidden;
-            border-top: 1px solid #f0f2f5;
-        }
-        
-        .nav-item {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-light);
-            font-size: 11px;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-        }
-        
-        .nav-item.active {
-            color: var(--primary);
-        }
-        
-        .nav-item.active::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 36px;
-            height: 3px;
-            background: var(--primary);
-            border-radius: 0 0 3px 3px;
-        }
-        
-        .nav-item i {
-            font-size: 18px;
-            margin-bottom: 4px;
-            transition: all 0.3s;
-        }
-        
-        .nav-item.active i {
-            color: var(--primary);
-            transform: scale(1.1);
-        }
-        
+.face-recognition img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
 
-        
-        .absensi-button:hover {
-            transform: translateX(-50%) scale(1.1);
-            box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 480px) {
-            .brand-text {
-                font-size: 15px;
-            }
-            
-            .user-greeting {
-                font-size: 18px;
-            }
-            
-            .stat-card {
-                padding: 10px;
-            }
-            
-            .stat-value {
-                font-size: 16px;
-            }
-            
-            .skp-section {
-                padding: 14px;
-            }
-            
-            .absensi-btn {
-                width: 140px;
-                height: 140px;
-            }
-        }
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .brand-logo {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 14px;
-            background: rgba(255,255,255,0.3);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.4);
-            overflow: hidden;
-        }
-        
-        .brand-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .nav-left {
+.face-recognition .scanning {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.map-container {
+    width: 100%;
+    height: 150px;
+    background: #f8f9fa;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, #e9ecef, #dee2e6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+}
+
+.attendance-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.attendance-detail {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+}
+
+.detail-label {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.detail-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.duration-value {
+    color: var(--accent);
+}
+
+.attendance-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.attendance-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.checkin-btn {
+    background: var(--accent);
+    color: white;
+}
+
+.checkout-btn {
+    background: var(--warning);
+    color: white;
+}
+
+.attendance-btn:hover {
+    opacity: 0.9;
+}
+
+/* Career Content Styles */
+.career-section {
+    padding: 20px;
+}
+
+.career-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.career-card h2 {
+    font-size: 18px;
+    color: var(--primary);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.career-path {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    padding: 15px 0;
+}
+
+.career-path::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--primary);
+    z-index: 1;
+}
+
+.path-item {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    z-index: 2;
+}
+
+.path-marker {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.path-content {
+    flex: 1;
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.path-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.path-duration {
+    font-size: 12px;
+    color: var(--text-light);
+    margin-bottom: 5px;
+}
+
+.path-description {
+    font-size: 13px;
+    color: var(--text);
+}
+
+/* Competency Content Styles */
+.competency-section {
+    padding: 20px;
+}
+
+.competency-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.competency-card h2 {
+    font-size: 18px;
+    color: var(--primary);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.chart-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.chart {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.chart-title {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.chart-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.chart-bar {
+    width: 100%;
+    height: 10px;
+    background: #e9ecef;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.chart-fill {
+    height: 100%;
+    background: linear-gradient(to right, var(--primary), var(--primary-light));
+    border-radius: 10px;
+}
+
+.radar-chart {
+    width: 100%;
+    height: 200px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.radar-placeholder {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(
+        var(--primary) 0% 25%, 
+        var(--accent) 25% 50%, 
+        #ffc107 50% 75%, 
+        #17a2b8 75% 100%
+    );
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radar-placeholder::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: white;
+}
+
+.radar-labels {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.radar-label {
+    position: absolute;
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--dark);
+    transform: translate(-50%, -50%);
+}
+
+.radar-label:nth-child(1) { top: 10%; left: 50%; }
+.radar-label:nth-child(2) { top: 50%; left: 90%; }
+.radar-label:nth-child(3) { top: 90%; left: 50%; }
+.radar-label:nth-child(4) { top: 50%; left: 10%; }
+
+/* Footer Navigation */
+.footer-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    display: flex;
+    box-shadow: 0 -3px 12px rgba(0,0,0,0.08);
+    height: 70px;
+    z-index: 100;
+    max-width: 480px;
+    margin: 0 auto;
+    border-radius: 20px 20px 0 0;
+    overflow: hidden;
+    border-top: 1px solid #f0f2f5;
+}
+
+.nav-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.nav-item.active {
+    color: var(--primary);
+}
+
+.nav-item.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 3px;
+    background: var(--primary);
+    border-radius: 0 0 3px 3px;
+}
+
+.nav-item i {
+    font-size: 18px;
+    margin-bottom: 4px;
+    transition: all 0.3s;
+}
+
+.nav-item.active i {
+    color: var(--primary);
+    transform: scale(1.1);
+}
+
+.absensi-button:hover {
+    transform: translateX(-50%) scale(1.1);
+    box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .brand-text {
+        font-size: 15px;
+    }
+    
+    .user-greeting {
+        font-size: 16px;
+    }
+    
+    .stat-card {
+        padding: 6px 3px;
+    }
+    
+    .stat-value {
+        font-size: 13px;
+    }
+    
+    .skp-section {
+        padding: 14px;
+    }
+    
+    .absensi-btn {
+        width: 140px;
+        height: 140px;
+    }
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.brand-logo {
+    width: 36px;
+    height: 36px;
+}
+
+.nav-left {
     margin-left: -30px; /* geser ke kiri */
 }
 
@@ -1010,21 +1298,67 @@
                 </div>
                 
                 <div class="dashboard-content">
-                    <div class="user-greeting">Selamat Pagi, Fatah!</div>
-                    <div class="user-position">Analis SDM Aparatur Ahli</div>
+                    <div class="user-info">
+                        <div class="user-greeting">Selamat Pagi, Fatah!</div>
+                        <div class="user-position">Analis SDM Aparatur Ahli Pertama</div>
+                    </div>
                     
-                    <div class="stat-cards">
-                        <div class="stat-card">
-                            <div class="stat-value">87%</div>
-                            <div class="stat-label">Job Match</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">24</div>
-                            <div class="stat-label">Pelatihan</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">96%</div>
-                            <div class="stat-label">Kehadiran</div>
+                    <!-- Stat Cards Utama -->
+                    <div class="stat-card">
+                        <div class="stat-value">87%</div>
+                        <div class="stat-label">Job Match</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">24</div>
+                        <div class="stat-label">Pelatihan</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">96%</div>
+                        <div class="stat-label">Kehadiran</div>
+                    </div><div class="stat-card">
+                        <div class="stat-value">Rp 14.7 jt</div>
+                        <div class="stat-label">Estimasi THP</div>
+                    </div>
+                    
+                
+                    
+                    <!-- Mini Cards -->
+                    <div class="mini-card">
+                        <div class="mini-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="mini-value">2x F-Board</div>
+                
+                    </div>
+                    <div class="mini-card">
+                            <div class="mini-icon"><i class="fas fa-utensils"></i></div>
+                        <div class="mini-value">5x F-Day</div>
+                     
+                    </div>
+
+                    <div class="mini-card">
+                        <div class="mini-icon"><i class="fas fa-money-bill-wave"></i></div>
+                        <div class="mini-value">100% Gaji</div>
+              
+                    </div>
+                    <div class="mini-card">
+                        <div class="mini-icon"><i class="fas fa-coins"></i></div>
+                        <div class="mini-value">94% Tukin</div>
+                  
+                    </div>
+                    
+                    
+                    <!-- Ninebox & Development -->
+                    <div class="ninebox-section">
+                        <div class="ninebox-title">Informasi Talenta</div>
+                        <div class="ninebox-content">
+                            <div class="ninebox-badge">
+                                <i class="fas fa-star"></i> Box 9
+                            </div>
+                            <div class="development-text">
+                                Pengembangan: Tubel, Shortcourse, Rotasi Jabatan
+                            </div>
+                            <div class="ninebox-badge">
+                                dari 150 Pegawai <i class="fas fa-users"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1052,10 +1386,8 @@
                 </div>
             </div>
             
-
-
-                <div class="quick-menu">
-                    <div class="menu-item">
+            <div class="quick-menu">
+                <div class="menu-item">
                     <div class="menu-icon">
                         <i class="fas fa-calendar-alt"></i>
                     </div>
@@ -1295,7 +1627,7 @@
             </div>
         </div>
         
-        <!-- Absensi Content -->
+        <!-- Absensi Content (Enhanced) -->
         <div class="content-section" id="absensi-content">
             <div class="absensi-section">
                 <h2 class="absensi-title">Presensi Kehadiran</h2>
@@ -1305,9 +1637,50 @@
                     <div class="absensi-time">08:24</div>
                     <div class="absensi-date">Rabu, 28 Februari 2025</div>
                     
-                    <button class="absensi-btn">
-                        <i class="fas fa-fingerprint"></i>
-                    </button>
+                    <div class="attendance-container">
+                        <!-- Face Recognition -->
+                        <div class="face-recognition">
+                            <img src="https://via.placeholder.com/120" alt="Face Recognition">
+                            <div class="scanning">Mengenali wajah...</div>
+                        </div>
+                        
+                        <!-- Map -->
+                        <div class="map-container">
+                            <div class="map-placeholder">
+                                <i class="fas fa-map-marker-alt"></i> Kantor Dinas Kominfo
+                            </div>
+                        </div>
+                        
+                        <!-- Attendance Details -->
+                        <div class="attendance-details">
+                            <div class="attendance-detail">
+                                <div class="detail-label">Jam Masuk</div>
+                                <div class="detail-value">07:45</div>
+                            </div>
+                            <div class="attendance-detail">
+                                <div class="detail-label">Jam Pulang</div>
+                                <div class="detail-value">-</div>
+                            </div>
+                            <div class="attendance-detail">
+                                <div class="detail-label">Durasi Kerja</div>
+                                <div class="detail-value duration-value">0:39</div>
+                            </div>
+                            <div class="attendance-detail">
+                                <div class="detail-label">Status</div>
+                                <div class="detail-value" style="color: var(--accent);">Aktif</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Actions -->
+                        <div class="attendance-actions">
+                            <button class="attendance-btn checkin-btn">
+                                <i class="fas fa-sign-in-alt"></i> Check In
+                            </button>
+                            <button class="attendance-btn checkout-btn">
+                                <i class="fas fa-sign-out-alt"></i> Check Out
+                            </button>
+                        </div>
+                    </div>
                     
                     <div class="absensi-status">Status: Belum melakukan presensi pagi</div>
                     <div class="absensi-location">
@@ -1382,24 +1755,146 @@
             </div>
         </div>
         
-        <div class="absensi-button" data-target="absensi-content">
-        <i class="fas fa-fingerprint"></i>
+        <!-- Career Content -->
+        <div class="content-section" id="career-content">
+            <div class="career-section">
+                <div class="career-card">
+                    <h2>Target Karir</h2>
+                    <div class="info-item">
+                        <div class="info-label">Target Jabatan</div>
+                        <div class="info-value">Administrator (IV/a)</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Target Pencapaian</div>
+                        <div class="info-value">2028</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Kesiapan Saat Ini</div>
+                        <div class="info-value">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 45%"></div>
+                            </div>
+                            <div style="text-align: right; font-size: 12px; margin-top: 5px;">45%</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="career-card">
+                    <h2>Path Karier</h2>
+                    <div class="career-path">
+                        <div class="path-item">
+                            <div class="path-marker"><i class="fas fa-check"></i></div>
+                            <div class="path-content">
+                                <div class="path-title">Analis Sistem Informasi</div>
+                                <div class="path-duration">2020 - Sekarang</div>
+                                <div class="path-description">Penata Muda Tk.I (III/c)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="path-item">
+                            <div class="path-marker"><i class="fas fa-arrow-right"></i></div>
+                            <div class="path-content">
+                                <div class="path-title">Pengelola Sistem Informasi</div>
+                                <div class="path-duration">Target 2026</div>
+                                <div class="path-description">Penata (III/d)</div>
+                            </div>
+                        </div>
+                        
+                        <div class="path-item">
+                            <div class="path-marker"><i class="fas fa-arrow-right"></i></div>
+                            <div class="path-content">
+                                <div class="path-title">Administrator Sistem Informasi</div>
+                                <div class="path-duration">Target 2028</div>
+                                <div class="path-description">Pembina (IV/a)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        
+        <!-- Competency Content -->
+        <div class="content-section" id="competency-content">
+            <div class="competency-section">
+                <div class="competency-card">
+                    <h2>Rencana Pengembangan Kompetensi</h2>
+                    <div class="chart-container">
+                        <div class="chart">
+                            <div class="chart-title">Kompetensi Teknis</div>
+                            <div class="chart-value">72%</div>
+                            <div class="chart-bar">
+                                <div class="chart-fill" style="width: 72%"></div>
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <div class="chart-title">Manajerial</div>
+                            <div class="chart-value">58%</div>
+                            <div class="chart-bar">
+                                <div class="chart-fill" style="width: 58%"></div>
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <div class="chart-title">Sosial Kultural</div>
+                            <div class="chart-value">65%</div>
+                            <div class="chart-bar">
+                                <div class="chart-fill" style="width: 65%"></div>
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <div class="chart-title">Kepemimpinan</div>
+                            <div class="chart-value">49%</div>
+                            <div class="chart-bar">
+                                <div class="chart-fill" style="width: 49%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="competency-card">
+                    <h2>Pelaksanaan & Monitoring</h2>
+                    <div class="radar-chart">
+                        <div class="radar-placeholder">
+                            <div class="radar-labels">
+                                <div class="radar-label">Teknis</div>
+                                <div class="radar-label">Manajerial</div>
+                                <div class="radar-label">Kultural</div>
+                                <div class="radar-label">Kepemimpinan</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <div class="chart">
+                            <div class="chart-title">Pelatihan Diselesaikan</div>
+                            <div class="chart-value">8/12</div>
+                        </div>
+                        <div class="chart">
+                            <div class="chart-title">Sertifikasi</div>
+                            <div class="chart-value">3/5</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absensi-button" data-target="absensi-content">
+            <i class="fas fa-fingerprint"></i>
+        </div>
+        
         <!-- Footer Navigation -->
         <div class="footer-nav">
             <div class="nav-item active" data-target="dashboard-content">
                 <i class="fas fa-home"></i>
                 <span>Beranda</span>
             </div>
-            <div class="nav-item nav-left" data-target="notification-content">
-        <i class="fas fa-briefcase"></i>
-        <span>Kariermu</span>
-    </div>
-
-            <div class="nav-item nav-right" data-target="#">
-        <i class="fas fa-graduation-cap"></i>
-        <span>Kompetensi</span>
-    </div>
+            <div class="nav-item nav-left" data-target="career-content">
+                <i class="fas fa-briefcase"></i>
+                <span>Kariermu</span>
+            </div>
+            <div class="nav-item nav-right" data-target="competency-content">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Kompetensi</span>
+            </div>
             <div class="nav-item" data-target="profile-content">
                 <i class="fas fa-user"></i>
                 <span>Profil</span>
@@ -1411,6 +1906,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const navItems = document.querySelectorAll('.nav-item');
             const absensiButton = document.querySelector('.absensi-button');
+            const notifButton = document.getElementById('notif-btn');
             const contentSections = document.querySelectorAll('.content-section');
             
             // Navigation functionality
@@ -1437,8 +1933,20 @@
                 });
             });
             
+            // Notif button click handler
+            notifButton.addEventListener('click', function() {
+                navigateTo('notification-content');
+                
+                // Remove active class from all nav items
+                navItems.forEach(nav => nav.classList.remove('active'));
+            });
+            
+            // Absensi button click handler
             absensiButton.addEventListener('click', function() {
                 navigateTo('absensi-content');
+                
+                // Remove active class from all nav items
+                navItems.forEach(nav => nav.classList.remove('active'));
             });
             
             // Update time
@@ -1467,21 +1975,78 @@
                 }, 500);
             }
             
-            // Absensi button effect
-            const absensiBtn = document.querySelector('.absensi-btn');
-            if(absensiBtn) {
-                absensiBtn.addEventListener('click', function() {
-                    this.innerHTML = '<i class="fas fa-check"></i>';
-                    this.style.background = 'linear-gradient(135deg, #28a745, #218838)';
+            // Attendance functionality
+            const checkinBtn = document.querySelector('.checkin-btn');
+            const checkoutBtn = document.querySelector('.checkout-btn');
+            const checkinTime = document.querySelector('.detail-value:nth-child(1)');
+            const checkoutTime = document.querySelector('.detail-value:nth-child(2)');
+            const durationValue = document.querySelector('.duration-value');
+            const attendanceStatus = document.querySelector('.absensi-status');
+            
+            if (checkinBtn && checkoutBtn) {
+                let checkinTimestamp = null;
+                let timerInterval = null;
+                
+                // Format waktu
+                function formatTime(date) {
+                    return date.toLocaleTimeString('id-ID', {
+                        hour: '2-digit',
+                        minute: '2-digit'
+                    });
+                }
+                
+                // Hitung durasi kerja
+                function calculateDuration(start) {
+                    const now = new Date();
+                    const diff = Math.floor((now - start) / 1000); // dalam detik
+                    const hours = Math.floor(diff / 3600);
+                    const minutes = Math.floor((diff % 3600) / 60);
+                    return `${hours}:${minutes.toString().padStart(2, '0')}`;
+                }
+                
+                // Update durasi secara real-time
+                function updateDuration() {
+                    if (checkinTimestamp) {
+                        durationValue.textContent = calculateDuration(checkinTimestamp);
+                    }
+                }
+                
+                // Check In handler
+                checkinBtn.addEventListener('click', function() {
+                    const now = new Date();
+                    checkinTimestamp = now;
+                    checkinTime.textContent = formatTime(now);
+                    attendanceStatus.textContent = "Status: Presensi pagi berhasil dicatat (" + formatTime(now) + ")";
+                    attendanceStatus.style.color = "#28a745";
                     
-                    document.querySelector('.absensi-status').textContent = "Status: Presensi pagi berhasil dicatat (08:25)";
-                    document.querySelector('.absensi-status').style.color = "#28a745";
+                    // Start updating duration every minute
+                    timerInterval = setInterval(updateDuration, 60000);
+                    updateDuration();
                     
-                    // Change button after 2 seconds
-                    setTimeout(() => {
-                        this.innerHTML = '<i class="fas fa-fingerprint"></i> ABSENSI PULANG';
-                        this.style.background = 'linear-gradient(135deg, #0047AB, #1a5fcf)';
-                    }, 2000);
+                    // Show face recognition success
+                    const faceRecognition = document.querySelector('.face-recognition');
+                    faceRecognition.innerHTML = '<i class="fas fa-check-circle" style="font-size: 48px; color: #28a745;"></i><div>Wajah dikenali</div>';
+                });
+                
+                // Check Out handler
+                checkoutBtn.addEventListener('click', function() {
+                    if (!checkinTimestamp) {
+                        alert("Silakan lakukan Check In terlebih dahulu");
+                        return;
+                    }
+                    
+                    const now = new Date();
+                    checkoutTime.textContent = formatTime(now);
+                    attendanceStatus.textContent = "Status: Presensi pulang berhasil dicatat (" + formatTime(now) + ")";
+                    attendanceStatus.style.color = "#28a745";
+                    
+                    // Stop duration timer
+                    if (timerInterval) {
+                        clearInterval(timerInterval);
+                    }
+                    
+                    // Update final duration
+                    durationValue.textContent = calculateDuration(checkinTimestamp);
                 });
             }
         });
